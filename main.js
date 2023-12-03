@@ -7,7 +7,7 @@ async function apiRequest() {
 }
 
 function displayAll(api) {
-    let container = document.getElementById("container")
+    const container = document.getElementById("container")
     let html = "<ul>";
     for(a of api.results) {
          html += `  
@@ -29,13 +29,19 @@ async function searchPokemon(){
 }
 
 function showDetailsSearch(api) {
-    let showDetails = document.getElementById("showDetails")
+    const showDetails = document.getElementById("showDetails")
+    const typesArr = api.types.map(key => key.type.name)
+    const abilitiesArr = api.abilities.map(key => key.ability.name)
+    const movesArr = api.moves.map(key => key.move.name)
+    const pokemonImage = api.sprites.other['official-artwork'].front_default
     let html = `<ul>
-                <li>${api.forms[0].name}</li>
-                <li>${api.types[0].type.name}</li>
-                <li>${api.abilities[0].ability.name}</li>
-                <li>${api.abilities[1].ability.name}</li>
+                <li>Name: ${api.forms[0].name}</li>
+                <li>Type: ${typesArr.join(" , ")}</li>
+                <li>Abilities: ${abilitiesArr.join(" , ")}</li>
+                <li>Moves: ${movesArr.join(" , ")}</li>
+                <li><img src="${pokemonImage}"></li>
                 </ul>
+                <hr>
             `
     showDetails.innerHTML += html   
 }

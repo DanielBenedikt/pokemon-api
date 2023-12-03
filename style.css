@@ -1,0 +1,42 @@
+body {
+    background-color: aquamarine;
+}
+
+button {
+     background-color: cadetblue;
+     color: black;
+     border-radius: 10px;
+}
+
+input {
+    font-family: cursive;
+    font-weight: bold;
+    border-radius: 10px;
+    border-radius: 10px;
+}
+
+#container {
+    max-width: 300px;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+.card {
+    border: 1px solid black;
+    box-shadow: 15;
+    max-width: 350px;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* #theBigDiv {
+    display: grid;
+    grid-template-columns: 3,1fr;
+    grid: 33% 33% 33%;
+} */
+
+
+
